@@ -173,6 +173,12 @@ public class TresEnRaya implements EntryPoint {
 						dialogBox.center();
 						closeButton.setFocus(true);
 						
+						
+						for(int i=0;i<celdas.size();i++){
+							
+							celdas.get(i).setEnabled(true);
+							celdas.get(i).setText("");
+						}
 					}
 					
 			

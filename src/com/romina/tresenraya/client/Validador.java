@@ -44,6 +44,30 @@ public class Validador {
 		Vector<String> j8=new Vector<String>();
 		j8.add("02");j8.add("11");j8.add("20");
 		
+		Vector<String> j12=new Vector<String>();
+		j12.add("00");j12.add("01");j12.add("02");
+		
+		Vector<String> j22=new Vector<String>();
+		j22.add("10");j22.add("11");j22.add("12");
+		
+		Vector<String> j32=new Vector<String>();
+		j32.add("20");j32.add("21");j32.add("22");
+		
+		Vector<String> j42=new Vector<String>();
+		j42.add("00");j42.add("10");j42.add("20");
+		
+		Vector<String> j52=new Vector<String>();
+		j52.add("01");j52.add("11");j52.add("21");
+		
+		Vector<String> j62=new Vector<String>();
+		j62.add("02");j62.add("12");j62.add("22");
+		
+		Vector<String> j72=new Vector<String>();
+		j72.add("00");j72.add("11");j72.add("22");
+		
+		Vector<String> j82=new Vector<String>();
+		j82.add("02");j82.add("11");j82.add("20");
+		
 		this.JugadasGanadorasX.add(j1);
 		this.JugadasGanadorasX.add(j2);
 		this.JugadasGanadorasX.add(j3);
@@ -53,14 +77,14 @@ public class Validador {
 		this.JugadasGanadorasX.add(j7);
 		this.JugadasGanadorasX.add(j8);
 		
-		this.JugadasGanadorasY.add(j1);
-		this.JugadasGanadorasY.add(j2);
-		this.JugadasGanadorasY.add(j3);
-		this.JugadasGanadorasY.add(j4);
-		this.JugadasGanadorasY.add(j5);
-		this.JugadasGanadorasY.add(j6);
-		this.JugadasGanadorasY.add(j7);
-		this.JugadasGanadorasY.add(j8);
+		this.JugadasGanadorasY.add(j12);
+		this.JugadasGanadorasY.add(j22);
+		this.JugadasGanadorasY.add(j32);
+		this.JugadasGanadorasY.add(j42);
+		this.JugadasGanadorasY.add(j52);
+		this.JugadasGanadorasY.add(j62);
+		this.JugadasGanadorasY.add(j72);
+		this.JugadasGanadorasY.add(j82);
 		
 		
 		
@@ -70,8 +94,9 @@ public class Validador {
 		for(int i=0;i < v.size();i++){
 			String texto =v.get(i).getText();
 			
-			if( texto != "X" && texto != "O" && texto =="" ){
-				return false;
+			if( texto != "X" && texto != "O"){
+				if(texto != "")
+				   return false;
 			}
 		}
 		return true;
@@ -90,8 +115,9 @@ public class Validador {
 					if(JugadasGanadorasX.get(j).size()==0)
 						return true;
 				}
+				v.get(i).setEnabled(false);
 			}
-			else{
+			else if (letra == "O"){
 				for(int j=0;j<JugadasGanadorasY.size();j++){
 					String aux=v.get(i).getStyleName().toString();
 					aux=aux.substring(12,14);
@@ -99,6 +125,10 @@ public class Validador {
 					if(JugadasGanadorasY.get(j).size()==0)
 						return true;
 				}
+				v.get(i).setEnabled(false);
+			}
+			else{
+				
 			}
 		}
 		
